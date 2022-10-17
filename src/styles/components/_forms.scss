@@ -1,0 +1,93 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the form component.
+// -----------------------------------------------------------------------------
+$border-color: #c2c2c2;
+$error-color: #ff0000;
+$success-color: #008000;
+$label-color: #000;
+
+input:focus,
+textarea:focus {
+  border-color: $border-color;
+  outline: 0;
+  box-shadow: 0 0 2px .25rem $border-color;
+  border-radius: 0.25rem;
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 0;
+  transition: opacity .3s ease-out;
+}
+.form {
+  max-width: rem(500px);
+  min-height: rem(300px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: rem(10px);
+  &__label {
+    position: relative;
+    margin-bottom: rem(20px);
+    color: $label-color;
+    cursor: text;
+  }
+  &__span {
+    position: absolute;
+    top: rem(6px);
+    left: rem(10px);
+    display: block;
+    padding: 0 0.4rem;
+    transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &.has-value {
+      top: rem(-15px);
+      background-color: $border-color;
+      padding: 0 0.4rem;
+      border-radius: .2em;
+      font-size: .8rem;
+    }
+    &.required::after {
+      content: '*';
+
+    }
+  }
+  &__input:not([type="checkbox"]) {
+    width: 100%;
+    padding: .5em 1em;
+    border-radius: .2em;
+    position: relative;
+  }
+  &__input.has-error {
+    box-shadow: 0 0 2px .15rem $error-color;
+    border-radius: 0.25rem;
+  }
+  &__input.is-valid {
+    box-shadow: 0 0 2px .15rem $success-color;
+    border-radius: 0.25rem;
+  }
+  &__input:focus {
+    box-shadow: 0 0 2px .25rem $border-color;
+    border-radius: 0.25rem;
+    & + .form__span {
+      top: rem(-15px);
+      background-color: $border-color;
+      padding: 0 0.4rem;
+      border-radius: .2em;
+      font-size: .8rem;
+    }
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+  &__errors-block ul {
+    padding-left: rem(35px);
+    margin-top: rem(10px);
+    list-style: circle;
+    color: #ff8f8f;
+  }
+  &__submit {
+    &:focus {
+      box-shadow: 0 0 2px .25rem $border-color;
+      border-radius: 0.25rem;
+    }
+  }
+}

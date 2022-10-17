@@ -1,0 +1,39 @@
+mixin icon(name, w=100, h=100)
+  svg(class=`svg-icon svg-icon--${name}`, width=`${w}`, height=`${h}`)
+    use(xlink:href=`/img/icons.svg#${name}`)
+
+//--------------------
+
+mixin randomNum(numMax = 100)
+  =(Math.random() * numMax + 1 | 0)
+
+//--------------------
+
+mixin pictureLazy(name, w=500, h=500, alt='', ext='jpg')
+  picture
+    source(type='image/webp' data-srcset=`/img/${name}.webp`)
+    img.lazy(data-src=`/img/${name}.${ext}` width=`${w}`, height=`${h}` alt=`${alt}` loading="lazy")
+
+//--------------------
+
+mixin picture(name, w=500, h=500, alt='', ext='jpg')
+  picture
+    source(type='image/webp' srcset=`/img/${name}.webp`)
+    img(src=`/img/${name}.${ext}` width=`${w}`, height=`${h}` alt=`${alt}`)
+
+//--------------------
+
+mixin dummyImg(w=500, h=500, color='', alt='dummy image')
+  img.lazy(data-src=`http://dummyimage.com/${w}x${h}/${color}` width=`${w}`, height=`${h}` alt=`${alt}` loading="lazy")
+
+//--------------------
+
+mixin link(name, href='javascript:void(0)')
+  a(href=href)&attributes(attributes)= name
+    if block
+      block
+    else
+
+//- EXAMPLE
+//- +link(name?, href?)(class="promo-index__link js-hover-btn hover-btn-animation")
+//--------------------

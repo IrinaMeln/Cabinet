@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@use 'sass:math';
+
+// 1. Configuration and helpers
+@import 'abstracts/variables', 'abstracts/functions', 'abstracts/mixins';
+
+// 2. Vendors
+//@import
+//  'vendors/normalize';
+
+// 3. Base stuff
+@import 'base/fonts', 'base/base', 'base/effects', 'base/helpers', 'base/animations';
+// 2. Components
+@import 'components/button', 'components/forms';
+// 4. Layout-related sections
+@import 'layout/header', 'layout/footer', 'layout/modal';
+
+// 6. Page-specific styles
+@import 'pages/index';
+
+// 7. Themes
+@import 'themes/default';

@@ -1,0 +1,26 @@
+extends ../templates/layout
+
+block main-content
+  main.contacts-page
+    section.contacts-page__promo
+      ._container
+        h1.title Другое
+        button.js-hover-btn.hover-btn-animation(@click='vueClick2')
+          .span
+          span
+            | {{ counter > 2 ? 'Молодец! Теперь жди...' : 'Кликни 3 раза!' }} {{ counter }}
+        progress#progress(value="0")
+        img.lazy(width="600" height="300")
+    section
+      ._container(@mousemove="onMousemove" :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }")
+        .number-animation(:style="{ backgroundColor: `hsl(${number}, 80%, 50%)` }")
+          | Type a number:
+          input(type='number' v-model.number='number')
+          p.big-number(:style="{ fontSize: number +'px' }") {{ tweened.toFixed(0) }}px
+    section#scene
+      .promo(data-depth="0.1")
+    ._container
+      custom-template Hello! I'm Custom template
+    section
+      ._container
+        button(@click='openModal') Open Modal

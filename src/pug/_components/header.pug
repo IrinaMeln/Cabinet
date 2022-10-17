@@ -1,0 +1,13 @@
+header.header.jq-header
+  ._container
+    transition(name='fade')
+      nav.nav(v-show="visible")
+        ul.nav__list
+          each link in links
+            li.nav__item
+              a.nav__link(href=`${link.path}`)=link.name
+    button(@click="visible = !visible") {{ visible ? 'Скрыть меню' : 'Показать меню' }}
+    | Шрифт
+    button(@click="mainFontSizeMin") -
+    button(@click="mainFontSizeMax") +
+    a(href=`${contacts.phone.value}`)=contacts.phone.name

@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.nav {
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin: rem(25px);
+  }
+  &__item + &__item {
+        margin-left: rem(20px);
+  }
+}

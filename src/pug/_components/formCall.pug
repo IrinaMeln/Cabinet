@@ -1,0 +1,43 @@
+h4.modal__title Оставьте нам свои контактные данные, мы перезвоним в течение 10 минут!
+form.form.modal__get-call(
+    @submit.prevent="checkForm"
+    novalidate="true"
+    action="https://melalex.ru/handlers/fake_server/"
+    method="post"
+    data-form-name="getCall"
+  )
+    label.form__label
+      input.form__input.input--text(
+        type="text"
+        v-model.trim="forms.getCall.NAME"
+        name="NAME"
+        data-validation-rules={
+            minLength: 3,
+            withoutSymbols: true,
+            required: true
+          }
+        )
+      span.form__span.required(:class="{ 'has-value': forms.getCall.NAME }") Имя
+      .form__errors-block(v-show="forms.getCall.ERRORS.length")
+        template(v-for="arrError in forms.getCall.ERRORS")
+          ul(v-if="arrError.NAME")
+            li(v-for="error in arrError.NAME") {{ error }}
+    label.form__label
+      input.form__input.input--phone(
+        type="tel"
+        v-model.trim="forms.getCall.PHONE"
+        name="PHONE"
+        data-validation-rules={phone: true, required: true}
+        )
+      span.form__span.required(:class="{ 'has-value': forms.getCall.PHONE }") Телефон
+      .form__errors-block(v-show="forms.getCall.ERRORS.length")
+        template(v-for="arrError in forms.getCall.ERRORS")
+          ul(v-if="arrError.PHONE")
+            li(v-for="error in arrError.PHONE") {{ error }}
+    button.form__submit.btn(
+      type="submit"
+      :disabled="formUnderProcess"
+      :class="{ 'is-loading': formUnderProcess }"
+      ) Заказать звонок
+    p.form__descr Согласен с политикой&nbsp;
+      +link('обработки данных').form__link

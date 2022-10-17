@@ -1,0 +1,6 @@
+footer.footer
+  ._container
+    ul.footer-nav
+      each link in links
+        li.footer-nav__item
+          a.footer-nav__link(href=`${link.path}`)=link.name

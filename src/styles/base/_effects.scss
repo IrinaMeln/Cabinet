@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains effects.
+// -----------------------------------------------------------------------------
+/*===Hover Effects*/
+/* Underline From Center */
+.hvr-underline-from-center {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: $brand-color;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+// Blur
+.box-wrap:hover .box {
+  filter: blur(3px);
+}
+.box-wrap:hover .box:hover {
+  transform: scale(1);
+  filter: blur(0px);
+  opacity: 1;
+}
+/*====Animation=====*/
+.hover-btn-animation {
+  --width: 100%;
+  --time: 0.7s;
+  position: relative;
+  overflow: hidden;
+}
+.hover-btn-animation p,
+.hover-btn-animation span {
+  position: relative;
+  z-index: 5;
+  transition: color var(--time);
+}
+.hover-btn-animation .span {
+  position: absolute;
+  display: block;
+  content: '';
+  z-index: 0;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  background: lighten($font-special-color, 8%);
+  transform: translate(-50%, -50%);
+  transition: width var(--time), padding-top var(--time);
+}
+.hover-btn-animation:hover .span {
+  width: calc(var(--width) * 2.25);
+  padding-top: calc(var(--width) * 2.25);
+}
+/*====End Animation=====*/

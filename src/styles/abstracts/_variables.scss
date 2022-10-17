@@ -1,0 +1,101 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+$Roboto: 'Roboto';
+$RobotoMedium: 'Roboto-Medium';
+$RobotoBold: 'Roboto-Bold';
+
+$Lato: 'Lato';
+$LatoMedium: 'Lato-Medium';
+$LatoBlack: 'Lato-Black';
+
+/// Regular font family
+/// @type List
+$text-font-stack: Arial, -apple-system, system-ui, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+  'Monaco', monospace !default;
+
+/// Copy text color
+/// @type Color
+$font-main-color: #000000 !default;
+
+/// Copy text color
+/// @type Color
+$font-second-color: #ffffff !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #264a87 !default;
+
+/// @type Color
+$font-special-color: #045da0 !default;
+
+$hover-color: #dfe4ed !default;
+
+/// Medium grey
+/// @type Color
+$bg-main-color: #ffffff !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1320px !default;
+
+$sizes: (
+  'xs': 20em,  // 320px
+  'sm': 36em,  // 576px
+  'md': 48em,  // 768px
+  'lg': 62em,  // 992px
+  'xl': 75em,  // 1200px
+);
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+
+$container-size: (
+  'xxxs': 330px,
+  'xxs': 350px,
+  'xs': 400px,
+  'sm': 540px,
+  'md': 720px,
+  'lg': 960px,
+  'xl': 1140px,
+  'xxl': 1320px,
+) !default;
+
+$breakpoints: (
+  'xxxs': (
+    min-width: 320px,
+  ),
+  'xxs': (
+    min-width: 375px,
+  ),
+  'xs': (
+    min-width: 425px,
+  ),
+  'sm': (
+    min-width: 576px,
+  ),
+  'md': (
+    min-width: 768px,
+  ),
+  'lg': (
+    min-width: 992px,
+  ),
+  'xl': (
+    min-width: 1200px,
+  ),
+  'xxl': (
+    min-width: 1400px,
+  ),
+) !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+/// $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/img/' !default;

@@ -1,0 +1,18 @@
+extends ../templates/layout
+
+block main-content
+  main.about-page
+    section.about-page__promo
+      ._container
+        h1.title О компании
+        section.splide(aria-label='Splide Basic HTML Example')
+          .splide__track
+            ul.splide__list
+              li.splide__slide
+                +icon('hipster-music', 200, 200)
+              li.splide__slide
+                +picture('12', 300, 300, 'alt')
+              li.splide__slide
+                +icon('email-blue', 200, 200)
+          .splide__progress
+            .splide__progress__bar

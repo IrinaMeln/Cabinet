@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+// Переменные для кнопки
+
+// … включите сюда любые правила для кнопки:
+// - миксины
+// - плейсхолдеры
+// - функции
+
+/**
+ * Кнопки
+ */
+.btn {
+  font-size: 1rem;
+  background-color: transparent;
+  border-radius: 0.2em;
+  border: 1px solid #000;
+  padding: 0.5em 0.8em;
+  transition: all 0.2s ease-in;
+}
+.btn--small {
+  font-size: 0.8rem;
+}
+.btn--large {
+  font-size: 1.2rem;
+}
+.btn--success {
+  border-color: #cfe8c9;
+  color: #fff;
+  background-color: #2f5926;
+}
+.btn--inline {
+  display: inline-block;
+}
